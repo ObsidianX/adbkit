@@ -173,6 +173,13 @@ class Client
           .execute()
       .nodeify callback
 
+  getThirdPartyPackages: (serial, callback) ->
+    this.transport serial
+      .then (transport) ->
+        new GetThirdPartyPackagesCommand transport
+          .execute()
+      .nodeify callback
+
   getDHCPIpAddress: (serial, iface = 'wlan0', callback) ->
     if typeof iface is 'function'
       callback = iface

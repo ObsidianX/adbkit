@@ -21,6 +21,7 @@ module.exports = (grunt) ->
       options:
         indentation:
           level: 'ignore'
+        force: true
       src:
         src: '<%= coffee.src.cwd %>/<%= coffee.src.src %>'
       index:
